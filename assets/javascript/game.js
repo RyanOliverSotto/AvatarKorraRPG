@@ -35,8 +35,9 @@ $(document).ready(function () {
     //Optional sounds
     let audioBG = new Audio("assets/sounds/background.mp3");
     let audioFight = new Audio("assets/sounds/karatechop.m4a");
+    //let audioGameOver = new Audio("assets/sounds/gameover.wav");
     let audioGameOver = new Audio("assets/sounds/gameover.wav");
-    let audioGameWin = new Audio("assets/sounds/harpwin.wav");
+    let audioGameWin = new Audio("assets/sounds/theend.mp3");
     let audioClick = new Audio("assets/sounds/typewriterkey.wav");
     //var audioBG = new Audio("assets/sounds/avatarsound.mp3");
     audioBG.play();
@@ -108,7 +109,6 @@ $(document).ready(function () {
     // Function to clear the game message section
     let clearMessage = function () {
         let gameMessage = $("#game-message");
-
         gameMessage.text("");
     };
 
@@ -197,6 +197,8 @@ $(document).ready(function () {
                     $("#attack-button").hide();
                     restartGame("YOU'VE WON: BALANCE HAS BEEN RESTORED!"); 
                     audioGameWin.play();
+                    audioBG.pause();
+                    audioBG.currentTime = 0;
                 }
             }
             // Increment turn counter. This is used for determining how much damage the player does.
@@ -204,7 +206,7 @@ $(document).ready(function () {
         } else {
             // If there is no defender, render an error message.
             clearMessage();
-            renderMessage("No enemy selected");
+            renderMessage("No enemy was selected");
         }
     });
 });

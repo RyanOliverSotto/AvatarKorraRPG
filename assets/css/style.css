@@ -19,6 +19,11 @@ img {
   height: 150px;
 }
 
+img:hover {
+  transform: scale(1.18);
+  transition: all .8s ease;
+}
+
 header {
   background: rgba(0, 0, 0, .8);
   color: yellow;
