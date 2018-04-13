@@ -32,16 +32,6 @@ $(document).ready(function () {
             enemyAttackBack: 25
         }
     };
-    //Optional sounds
-    let audioBG = new Audio("assets/sounds/background.mp3");
-    let audioFight = new Audio("assets/sounds/karatechop.m4a");
-    let audioGameOver = new Audio("assets/sounds/gameover.wav");
-    let audioGameWin = new Audio("assets/sounds/harpwin.wav");
-    let audioClick = new Audio("assets/sounds/typewriterkey.wav");
-    //var audioBG = new Audio("assets/sounds/avatarsound.mp3");
-    audioBG.play();
-
-        
 
     let attacker;
     let combatants = [];
@@ -118,8 +108,7 @@ $(document).ready(function () {
     $("#characters-section").on("click", ".character", function () {
         // Saving the clicked character's name.
         let name = $(this).attr("data-name");
-        // Play an optional sound
-        audioClick.play();
+
         // If a player character has not yet been chosen...
         if (!attacker) {
             // We populate attacker with the selected character's information.
@@ -140,7 +129,6 @@ $(document).ready(function () {
     });
     // Creates an on click event for each enemy.
     $("#available-to-attack-section").on("click", ".character", function () {
-        audioClick.play();
         let name = $(this).attr("data-name");
         // If there is no defender, the clicked enemy will become the defender.
         if ($("#defender").children().length === 0) {
@@ -155,7 +143,6 @@ $(document).ready(function () {
     // When you click the attack button, run the following game logic.
     $("#attack-button").on("click", function () {
         // If there is a defender, allow for battle
-        audioFight.play();
         if ($("#defender").children().length !== 0) {
             // Creates messages for our attack and our opponents counter attack.
             let attackMessage = "You attacked " + defender.name + " for " + attacker.attack * gameRound + " damage.";
@@ -174,11 +161,9 @@ $(document).ready(function () {
                 updateCharacter(attacker, "#selected-character");
                 if (attacker.health <= 0) {
                     clearMessage();
-
                     restartGame("YOU NEED MORE TRAINING: GAME OVER!!!");
                     $("#attack-button").off("click");
-                    $("#attack-button").hide();                    
-                    audioGameOver.play();
+                    $("#attack-button").hide();
                 }
             } else {
                 // If the enemy has less than zero health they are defeated.
@@ -195,8 +180,7 @@ $(document).ready(function () {
                     clearMessage();
                     $("#attack-button").off("click");
                     $("#attack-button").hide();
-                    restartGame("YOU'VE WON: BALANCE HAS BEEN RESTORED!"); 
-                    audioGameWin.play();
+                    restartGame("YOU'VE WON: BALANCE HAS BEEN RESTORED!");
                 }
             }
             // Increment turn counter. This is used for determining how much damage the player does.

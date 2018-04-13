@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+    <!--These are the default metas created by Visual Studio-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Korra RPG</title>
+    <!--Adding the reset css-->
+    <link type="text/css" rel="stylesheet" href="assets/css/reset.css">
+    <!--Adding the src for JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <!--Adding the src for Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+    <!--Adding the src for Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Adding the link for Google Icons-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!--Adding the src for our Bootcamp driven styling-->
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css">
+		<!-- Game Logic -->
+		<script type="text/javascript" src="assets/javascript/game.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<div class="row">
+					<div class="col-lg-12">
+						<div><center><h1>Avatar Korra: Fight for Balance</h1></center></div>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-lg-4"></div>
+					<div class="col-lg-4">
+						<h1 class="battle">Book 5: Battle</h1>
+					</div>
+					<div class="col-lg-4"></div>
+				</div>
+			</header>
+			<br>
+			<br>
+			<div id="main-game-section">
+				<!-- Where the characters are initially available to be selected. 
+				I originally used image tags and manually populated the characters. I
+				was able to use jQuery to manipulate the DOM and dynamically make the images appear throughout
+				the game logic.
+				-->
+				<div class="row">
+					<div class="col-lg-4">
+						<div id="characters-section">
+							<div class="section-title">Select Your Hero</div>
+						</div>
+						<div id="selected-character-section">
+							<div class="section-title">Your Hero</div>
+							<!-- Where our selected character will appear. -->
+							<div id="selected-character"></div>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div id="action">
+							<div class="character-section">
+								<div class="section-title">Defender</div>
+								<!-- Where our defender will appear. -->
+								<div id="defender"></div>
+							</div>
+						</div>
+						<br>
+						<br>
+						<br>
+						<br>
+						<div id="fight-section">
+							<button class="btn btn-block btn-danger" id="attack-button">Attack</button>
+						</div>
+					</div>
+					<!-- Where our enemies available to attack will appear. -->
+					<div class="col-lg-4">
+						<div id="available-to-attack-section">
+							<div class="section-title">Enemies</div>
+						</div>
+					</div>
+				</div>
+				<br>
+				<br>
+				<!-- Area for game messages. -->
+				<div class="row">
+					<div class="col-lg-12">
+						<div id="game-message"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
