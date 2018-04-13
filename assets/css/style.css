@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css?family=Diplomata|Kaushan+Script');
+/*
+font-family: 'Kaushan Script', cursive;
+font-family: 'Diplomata', cursive;
+*/
+body {
+  font-family: 'Kaushan Script', cursive;
+  background-image: url("../images/backgrounds/korra_background04.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+  color:black;
+}
+
+img {
+  width: 150px;
+  height: 150px;
+}
+
+header {
+  background: rgba(0, 0, 0, .8);
+  color: yellow;
+}
+
+.battle {
+  text-align: center;
+  color: burlywood;
+}
+
+.section-title {
+  font-size: 150%;
+  background: rgba(0, 0, 0, .8);
+  text-align: center;
+  color:  yellow;
+}
+
+.character {
+  display: inline-block;
+  cursor: pointer;
+  background-color: white;
+  border-color: green;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.character-image {
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  height: 100px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.character-name {
+  text-align: center;
+}
+
+.character-health {
+  text-align: center;
+}
+
+#available-to-attack-section .character {
+  display: inline-block;
+  cursor: pointer;
+  background-color: red;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+}
+
+#action .character {
+  color: white;
+  background-color: black;
+}
+
+#attacker {
+  width: 190px;
+  height: 160px;
+}
+
+#defender {
+  width: 190px;
+  height: 160px;
+}
+
+#defender-name {
+  text-align: center;
+}
+
+#defender-health {
+  text-align: center;
+}
+#game-message{
+  font-size: 150%;
+  background: rgba(0, 0, 0, .8);
+  text-align: center;
+  color: red;
+}

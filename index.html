@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
     <!--These are the default metas created by Visual Studio-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Project Management Game</title>
+    <title>Korra RPG</title>
     <!--Adding the reset css-->
     <link type="text/css" rel="stylesheet" href="assets/css/reset.css">
     <!--Adding the src for JQuery -->
@@ -21,118 +21,77 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!--Adding the src for our Bootcamp driven styling-->
     <link type="text/css" rel="stylesheet" href="assets/css/style.css">
-</head>
-<!--Start the local style-->
-<style> 
-body{
-    background-image: url("assets/images/backgrounds/korra_background04.jpg");
-}
-
-.readyState{
-    width: 175px;
-    padding: 20px 5px 20px 5px;
-    background-color: white;
-    border-style: solid;
-    border-width: 3px;
-    border-color: lime;
-}
-
-.enemyState{
-    width: 175px;
-    padding: 20px 5px 20px 5px;
-    background-color: red;
-    border-style: solid;
-    border-width: 3px;
-    border-color:magenta;
-}
-
-.myEnemy{
-    width: 175px;
-    padding: 20px 5px 20px 5px;
-    background-color: black;
-    border-style: solid;
-    border-width: 3px;
-    border-color: lime;
-}
-
-
-h1, h2, h3, h4{
-    text-align: left;
-    color: white;
-}
-</style>
-<!--End the local style-->
-
-<body onload="initiateProject();">
-    <div class="wrapper">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>Avatar: The Legend of Korra RPG</h1>
-            </div>
-        </div>
-    </div>
-    <div class="wrapper" >
-            <div class="row">
-                    <div class="col-md-12">
-                        <h4>Your Character</h4>
-                        <div id="myHero">
-                                <div class="row">
-                                        <div class="col-md-12" id="allCharacters">
-                                        <img src="assets/images/characters/Korra.png" alt="Korra" class="readyState"/>                  
-                                        <img src="assets/images/characters/Mako.png" alt="Mako" class="readyState"/>                    
-                                        <img src="assets/images/characters/Bolin.png" alt="Bolin" class="readyState"/>                    
-                                        <img src="assets/images/characters/Tenzin.png" alt="Tenzin" class="readyState"/>                
-                                        </div>
-                                </div>
-                        </div>
-                    </div>
-            </div>
-            <div class="row">
-                    <div class="col-md-8">
-                        <h4>Enemies Available to Attack</h4>
-                        <div id="allEnemies">
-                                <div class="row">
-                                        <div class="col-md-12" id="allCharacters">
-                                        <img src="assets/images/characters/Korra.png" alt="Korra" class="enemyState"/>                  
-                                        <img src="assets/images/characters/Mako.png" alt="Mako" class="enemyState"/>                    
-                                        <img src="assets/images/characters/Bolin.png" alt="Bolin" class="enemyState"/>                    
-                                        <img src="assets/images/characters/Tenzin.png" alt="Tenzin" class="enemyState"/>                
-                                        </div>
-                                </div>
-                        </div>
-                    </div>
-            </div>
-            <div class="row">
-                    <div class="col-md-8">
-                        <h4>Fight Section</h4>
-                        <button type="button" class="btn btn-danger">FIGHT!</button>
-                        <div id="myEnemy">
-                        <h4>Defender</h4>
-                        </div>
-                        <div class="row">
-                                <div class="col-md-12" id="allCharacters">
-                                <img src="assets/images/characters/Korra.png" alt="Korra" class="myEnemy"/>                  
-                                <img src="assets/images/characters/Mako.png" alt="Mako" class="myEnemy"/>                    
-                                <img src="assets/images/characters/Bolin.png" alt="Bolin" class="myEnemy"/>                    
-                                <img src="assets/images/characters/Tenzin.png" alt="Tenzin" class="myEnemy"/>                
-                                </div>
-                        </div>
-                    </div>
-            </div>
-    </div>
-
-    <script text="text javascript">
-        /* Begin the local javascript here.*/
-        // Declare the global variable here
-
-        /*
-        Populate the target goals with Math Randoms for each of the buttons and set the display to game ready
-        */
-        function initiateProject() {
-        }
-
-    </script><!--End the local javascript-->
-</body>
-<!--End the body tag-->
-
+		<!-- Game Logic -->
+		<script type="text/javascript" src="assets/javascript/game.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<div class="row">
+					<div class="col-lg-12">
+						<div><center><h1>Avatar Korra: Fight for Balance</h1></center></div>
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-lg-4"></div>
+					<div class="col-lg-4">
+						<h1 class="battle">Book 5: Battle</h1>
+					</div>
+					<div class="col-lg-4"></div>
+				</div>
+			</header>
+			<br>
+			<br>
+			<div id="main-game-section">
+				<!-- Where the characters are initially available to be selected. 
+				I originally used image tags and manually populated the characters. I
+				was able to use jQuery to manipulate the DOM and dynamically make the images appear throughout
+				the game logic.
+				-->
+				<div class="row">
+					<div class="col-lg-4">
+						<div id="characters-section">
+							<div class="section-title">Select Your Hero</div>
+						</div>
+						<div id="selected-character-section">
+							<div class="section-title">Your Hero</div>
+							<!-- Where our selected character will appear. -->
+							<div id="selected-character"></div>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div id="action">
+							<div class="character-section">
+								<div class="section-title">Defender</div>
+								<!-- Where our defender will appear. -->
+								<div id="defender"></div>
+							</div>
+						</div>
+						<br>
+						<br>
+						<br>
+						<br>
+						<div id="fight-section">
+							<button class="btn btn-block btn-danger" id="attack-button">Attack</button>
+						</div>
+					</div>
+					<!-- Where our enemies available to attack will appear. -->
+					<div class="col-lg-4">
+						<div id="available-to-attack-section">
+							<div class="section-title">Enemies</div>
+						</div>
+					</div>
+				</div>
+				<br>
+				<br>
+				<!-- Area for game messages. -->
+				<div class="row">
+					<div class="col-lg-12">
+						<div id="game-message"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
